@@ -5,13 +5,15 @@
 import numpy as np
 import pandas as pd
 import re
-import importlib
+import os
+# import importlib
+from datetime import date
 import config as cfg
 import helpers as hlps
 import ummap_electra_redcap_data_integration_helpers as uerdi_hlps
 
-importlib.reload(hlps)
-importlib.reload(uerdi_hlps)
+# importlib.reload(hlps)
+# importlib.reload(uerdi_hlps)
 
 ####################
 # Get ELECTRA Data #
@@ -249,6 +251,10 @@ for form in [f for f in forms_el_raw if re.match(r'^fvp_\w{2}$', f)]:
 
 print("Writing cleaned and transformed ELECTRA data to CSV...")
 
-df_el_u3.to_csv("df_electra_to_ummap.csv", index=False)
+today = date.today()
+month_str = str(today.month) if len(str(today.month)) == 2 else "0" + str(today.month)
+day_str = str(today.day) if len(str(today.day)) == 2 else "0" + str(today.day)
+today_str = f"{today.year}-{month_str}-{day_str}"
+df_el_u3.to_csv(f"./electra_data_to_import/{today_str}-electra_data_to_import.csv", index=False)
 
 print("Done.")
