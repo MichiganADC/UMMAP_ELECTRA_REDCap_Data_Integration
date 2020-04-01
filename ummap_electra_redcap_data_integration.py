@@ -1,19 +1,16 @@
+#!/usr/bin/env python3
+
 ##################
 # Import Modules #
 ##################
 
 import numpy as np
-import pandas as pd
 import re
-import os
-# import importlib
 from datetime import date
 import config as cfg
 import helpers as hlps
 import ummap_electra_redcap_data_integration_helpers as uerdi_hlps
 
-# importlib.reload(hlps)
-# importlib.reload(uerdi_hlps)
 
 ####################
 # Get ELECTRA Data #

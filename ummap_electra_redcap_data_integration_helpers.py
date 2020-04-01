@@ -4,6 +4,8 @@ def lengthen_str(x, length, leading_str):
     :param x:
     :param length: Length to enforce `x` to be
     :type  length: int
+    :param leading_str: Character to prepend to `x`
+    :type  leading_str: str
     :return: `x` lengthened to
     """
     if isinstance(x, str):
