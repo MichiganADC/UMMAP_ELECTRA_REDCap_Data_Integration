@@ -21,6 +21,7 @@ print("Retrieving ELECTRA data from WSU REDCap API...")
 forms_el_raw = ["header",
                 "ivp_a1",
                 "ivp_a2",
+                "ivp_a3",
                 "ivp_a4",
                 "ivp_a5",
                 "ivp_b1",
