@@ -243,6 +243,12 @@ for form in [f for f in forms_el_raw if re.match(r'^fvp_\w{2}$', f)]:
     kwargs = {form_complete: (df_el_u3[form_complete]).where(df_el_u3['redcap_event_name'] != "visit_1_arm_1", np.NaN)}
     df_el_u3 = df_el_u3.assign(**kwargs)
 
+################################
+# Add Missing Center ID Values #
+
+michigan_adc_id = 43
+df_el_u3.loc[:, 'adcid'] = michigan_adc_id
+
 #################################
 # Write Transformed Data to CSV #
 #################################
