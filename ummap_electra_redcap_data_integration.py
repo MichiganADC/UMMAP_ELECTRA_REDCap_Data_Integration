@@ -212,6 +212,12 @@ df_el_u3 = df_el_u3.assign(fu_artype___3=np.where(df_el_u3['fu_artype'] == "3", 
 df_el_u3 = df_el_u3.assign(fu_artype___9=np.where(df_el_u3['fu_artype'] == "9", "1", ""))
 del df_el_u3['fu_artype']
 
+df_el_u3 = df_el_u3.assign(tele_artype___1=np.where(df_el_u3['tele_artype'] == "1", "1", ""))
+df_el_u3 = df_el_u3.assign(tele_artype___2=np.where(df_el_u3['tele_artype'] == "2", "1", ""))
+df_el_u3 = df_el_u3.assign(tele_artype___3=np.where(df_el_u3['tele_artype'] == "3", "1", ""))
+df_el_u3 = df_el_u3.assign(tele_artype___9=np.where(df_el_u3['tele_artype'] == "9", "1", ""))
+del df_el_u3['tele_artype']
+
 ####################################
 # Correct `ivp_XX_complete` Fields #
 
